@@ -1,6 +1,6 @@
 {
-  "name": "vite-pwa",
-  "short_name": "vite-pwa",
+  "name": "pocket-wedding",
+  "short_name": "pocketWed",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
