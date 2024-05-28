@@ -6,6 +6,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        HeaderColor: "#124E77",
         primary: {
           DEFAULT: "#2bca43",
         },
