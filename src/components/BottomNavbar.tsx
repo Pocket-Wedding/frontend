@@ -6,7 +6,7 @@ import My from "../assets/Image/My.svg";
 
 const BottomNavbar = () => {
   return (
-    <div className="fixed bottom-0 bg-gray-200 h-[100px] w-[600px] rounded-t-3xl">
+    <div className="fixed bottom-0 bg-gray-200 h-[100px] w-[560px] rounded-t-2xl">
       <div className="flex flex-row justify-center items-center h-full">
         <button className="mx-6">
           <img src={Home} />
