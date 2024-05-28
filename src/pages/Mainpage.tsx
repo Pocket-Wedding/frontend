@@ -52,13 +52,13 @@ const Mainpage = () => {
         </div>
 
         <div
-          className="flex flex-row absolute justify-center w-full max-w-[560px] text-3xl"
+          className="flex flex-row absolute justify-center w-full max-w-[560px] text-xl md:text-3xl"
           style={{ top: "850px" }}
         >
           <b>비용 부담없이 스몰 웨딩을 실현하세요</b>
         </div>
         <div
-          className="flex flex-row absolute justify-center w-full max-w-[560px] text-xl text-gray-400"
+          className="flex flex-row absolute justify-center w-full max-w-[560px] text-lg md:text-xl text-gray-400"
           style={{ top: "910px" }}
         >
           부제목
