@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <div
-      className="flex absolute bg-white w-[560px] h-[80px] justify-center border-2 border-b-gray-400"
+      className="flex absolute bg-white w-full max-w-[560px] h-[80px] justify-center border-2 border-b-gray-400"
       style={{ top: "86px" }}
     >
       <button className="mx-3 text-lg">
