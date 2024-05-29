@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import BottomNavbar from "../components/BottomNavbar";
-
-import Mainimage from "../assets/Image/Mainimage.svg";
+import SimpleSlider from "../components/Mainpage/SimpleSlider";
 
 import Comintro from "../assets/Image/Comintro.svg";
 import guide from "../assets/Image/guide.svg";
@@ -22,29 +21,30 @@ const Mainpage = () => {
       >
         <Header />
         <Navbar />
-        <div className="flex absolute w-full max-w-[560px] justify-center" style={{ top: "180px" }}>
-          <img className="w-full max-w-[540px]" src={Mainimage} />
+
+        <div className="absolute w-full max-w-[560px] justify-center" style={{ top: "180px" }}>
+          <SimpleSlider />
           <div
             className="flex absolute flex-row w-full max-w-[560px]  justify-center"
-            style={{ bottom: "-130px" }}
+            style={{ marginTop: "30px" }}
           >
-            <button className="mx-3">
+            <button className="mx-3 md-text-sm">
               <img src={Comintro} />
               <b>기업 소개</b>
             </button>
-            <button className="mx-3">
+            <button className="mx-3 md-text-sm">
               <img src={guide} />
               <b>가이드</b>
             </button>
-            <button className="mx-3">
+            <button className="mx-3 md-text-sm">
               <img src={selfquote} />
               <b>셀프 견적</b>
             </button>
-            <button className="mx-3">
+            <button className="mx-3 md-text-sm">
               <img src={eventreview} />
               <b>이벤트&리뷰</b>
             </button>
-            <button className="mx-3">
+            <button className="mx-3 md-text-sm">
               <img src={planner} />
               <b>플래너 상담</b>
             </button>
@@ -67,7 +67,7 @@ const Mainpage = () => {
           className="flex absolute w-full max-w-[560px] justify-center"
           style={{ top: "1000px" }}
         >
-          <img className="w-full max-w-[540px]" src={Subimage} />
+          <img className="w-full max-w-[520px]" src={Subimage} />
         </div>
         <div
           className="flex flex-col absolute w-full max-w-[560px] bg-gray-800 p-10"
