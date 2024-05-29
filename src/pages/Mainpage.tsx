@@ -25,8 +25,8 @@ const Mainpage = () => {
         <div className="absolute w-full max-w-[560px] justify-center" style={{ top: "180px" }}>
           <SimpleSlider />
           <div
-            className="flex absolute flex-row w-full max-w-[560px]  justify-center"
-            style={{ marginTop: "30px" }}
+            className="flex flex-row w-full max-w-[560px]  justify-center"
+            style={{ marginTop: "30px", top: 0 }}
           >
             <button className="mx-3 text-sm">
               <img src={Comintro} />
@@ -66,6 +66,7 @@ const Mainpage = () => {
         <div className="flex absolute w-full max-w-[560px] justify-center" style={{ top: "950px" }}>
           <img className="w-full max-w-[520px]" src={Subimage} />
         </div>
+
         <div
           className="flex flex-col absolute w-full max-w-[560px] bg-gray-800 p-10"
           style={{ top: "1400px" }}
