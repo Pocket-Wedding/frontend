@@ -1,4 +1,4 @@
-import PWlogo from "../assets/Image/PWlogo.svg";
+import PWlogo from "../../assets/Image/PWlogo.svg";
 
 const Header = () => {
   return (

@@ -1,8 +1,8 @@
-import Home from "../assets/Image/Home.svg";
-import reserve from "../assets/Image/reserve.svg";
-import self from "../assets/Image/self.svg";
-import Wedtalk from "../assets/Image/Weddingtalk.svg";
-import My from "../assets/Image/My.svg";
+import Home from "../../assets/Image/Home.svg";
+import reserve from "../../assets/Image/reserve.svg";
+import self from "../../assets/Image/self.svg";
+import Wedtalk from "../../assets/Image/Weddingtalk.svg";
+import My from "../../assets/Image/My.svg";
 
 const BottomNavbar = () => {
   return (

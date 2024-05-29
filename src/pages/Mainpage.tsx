@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
-import BottomNavbar from "../components/BottomNavbar";
+import Header from "../components/Mainpage/Header";
+import Navbar from "../components/Mainpage/Navbar";
+import BottomNavbar from "../components/Mainpage/BottomNavbar";
 import SimpleSlider from "../components/Mainpage/SimpleSlider";
 
 import Comintro from "../assets/Image/Comintro.svg";
