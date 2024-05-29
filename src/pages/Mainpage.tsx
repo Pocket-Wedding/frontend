@@ -28,23 +28,23 @@ const Mainpage = () => {
             className="flex absolute flex-row w-full max-w-[560px]  justify-center"
             style={{ marginTop: "30px" }}
           >
-            <button className="mx-3 md-text-sm">
+            <button className="mx-3 text-sm">
               <img src={Comintro} />
               <b>기업 소개</b>
             </button>
-            <button className="mx-3 md-text-sm">
+            <button className="mx-3 text-sm">
               <img src={guide} />
               <b>가이드</b>
             </button>
-            <button className="mx-3 md-text-sm">
+            <button className="mx-3 text-sm">
               <img src={selfquote} />
               <b>셀프 견적</b>
             </button>
-            <button className="mx-3 md-text-sm">
+            <button className="mx-3 text-sm">
               <img src={eventreview} />
               <b>이벤트&리뷰</b>
             </button>
-            <button className="mx-3 md-text-sm">
+            <button className="mx-3 text-sm">
               <img src={planner} />
               <b>플래너 상담</b>
             </button>
@@ -59,19 +59,16 @@ const Mainpage = () => {
         </div>
         <div
           className="flex flex-row absolute justify-center w-full max-w-[560px] text-lg md:text-xl text-gray-400"
-          style={{ top: "910px" }}
+          style={{ top: "900px" }}
         >
           부제목
         </div>
-        <div
-          className="flex absolute w-full max-w-[560px] justify-center"
-          style={{ top: "1000px" }}
-        >
+        <div className="flex absolute w-full max-w-[560px] justify-center" style={{ top: "950px" }}>
           <img className="w-full max-w-[520px]" src={Subimage} />
         </div>
         <div
           className="flex flex-col absolute w-full max-w-[560px] bg-gray-800 p-10"
-          style={{ top: "1500px" }}
+          style={{ top: "1400px" }}
         >
           <div className="flex flex-row h-1/4">
             <img className="flex items-center justify-center w-[80px] h-[100px]" src={Sublogo} />
