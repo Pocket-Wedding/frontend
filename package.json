@@ -11,11 +11,17 @@
     "format": "prettier --write"
   },
   "dependencies": {
+    "@types/react-slick": "^0.23.13",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+
     "react-router-dom": "^6.23.1",
+
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {

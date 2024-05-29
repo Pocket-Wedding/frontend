@@ -19,6 +19,7 @@ export default {
         130: "32.5rem",
       },
       colors: {
+
         "main-color": "#124E77",
         "light-blue": "#4D80A3",
         "deep-blue": "#001D31",
@@ -31,6 +32,7 @@ export default {
       },
       borderRadius: {
         30: "1.875rem",
+
       },
     },
   },
