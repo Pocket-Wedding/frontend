@@ -28,6 +28,9 @@ export default {
         "light-yellow": "#FEF4D0",
         "deep-yellow": "#F9D966",
       },
+      borderWidth: {
+        3: "3px",
+      },
       primary: {
         DEFAULT: "#2bca43",
       },
