@@ -31,7 +31,7 @@ function Header() {
           </Link>
 
           <Link
-            to="/invitations"
+            to="/Invitation"
             className="flex justify-center w-29 text-black text-sm font-bold mx-3 hover:border-b-2 mt-4 pb-3 border-b-main-color"
           >
             청첩장 & 축의금

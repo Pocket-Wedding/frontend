@@ -127,7 +127,7 @@ function SeudeumePage() {
             {"초기화"}
           </button>
           <button className="flex justify-center items-center w-20 h-7 mb-20 ml-5 rounded-md text-sm bg-main-color text-white hover:bg-deep-blue">
-            {"초기화"}
+            {"견적확인"}
           </button>
         </div>
       </div>

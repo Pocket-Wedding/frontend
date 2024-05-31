@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import SeudeumePage from "./pages/SeudeumePage";
+import Mainpage from "./pages/Mainpage";
+import InvitationPage from "./pages/InvitationPage";
 
 function App() {
   return (
@@ -8,9 +10,9 @@ function App() {
       <div>
         <Header />
         <Routes>
-          {/* 나중에 여기에 메인페이지 넣읍시다 */}
-          <Route path="/" element={<SeudeumePage />} />
+          <Route path="/" element={<Mainpage />} />
           <Route path="/Seudeume" element={<SeudeumePage />} />
+          <Route path="/Invitation" element={<InvitationPage />} />
         </Routes>
       </div>
     </Router>
