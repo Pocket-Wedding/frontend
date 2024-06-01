@@ -43,7 +43,7 @@ const Mainpage = () => {
           </button>
         </div>
       </div>
-      <div className="relative" style={{ top: "40rem" }}>
+      <div className="relative bg-gray-100 py-5" style={{ top: "40rem", height: "40rem" }}>
         <p className="flex flex-row justify-center w-full max-w-[560px] text-xl md:text-3xl my-4">
           비용 부담없이 스몰 웨딩을 실현하세요
         </p>
