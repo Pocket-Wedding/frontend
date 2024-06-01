@@ -15,7 +15,7 @@ import Sublogo from "../assets/Image/sublogo.svg";
 const Mainpage = () => {
   return (
     <div className="relative bg-white  w-140 max-w-[560px] h-full responsive-container">
-      <div className="absolute h-1/2 w-full max-w-[560px] justify-center">
+      <div className="absolute h-1/2 w-full max-w-[560px] justify-center mt-3">
         <SimpleSlider />
         <div
           className="flex flex-row w-full max-w-[560px]  justify-center"

@@ -1,4 +1,5 @@
 import Weddinghallbutton from "../components/Weddinghalls/Weddinghallbutton";
+import BottomNavbar from "../components/Mainpage/BottomNavbar";
 
 const Weddinghalls = () => {
   return (
@@ -100,6 +101,7 @@ const Weddinghalls = () => {
           </div>
         </div>
       </div>
+      <BottomNavbar />
     </div>
   );
 };

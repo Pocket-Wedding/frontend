@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Image1 from "../assets/Image1.png";
 import StarterPack from "../components/Seudeume/StarterPack";
 import Analysis from "../components/Seudeume/Analysis";
+import BottomNavbar from "../components/Mainpage/BottomNavbar";
 
 function SeudeumePage() {
   return (
@@ -131,6 +132,7 @@ function SeudeumePage() {
           </button>
         </div>
       </div>
+      <BottomNavbar />
     </div>
   );
 }
