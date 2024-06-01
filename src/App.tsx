@@ -7,7 +7,7 @@ import Weddinghalls from "./pages/Weddinghalls";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="flex flex-col items-center">
         <Header />
         <Routes>
           {/* 나중에 여기에 메인페이지 넣읍시다 */}
