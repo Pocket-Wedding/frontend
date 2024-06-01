@@ -57,7 +57,7 @@ const Mainpage = () => {
 
       <div
         className="flex flex-col absolute w-full max-w-[560px] bg-gray-800 p-10"
-        style={{ top: "75rem" }}
+        style={{ top: "75rem", height: "40rem" }}
       >
         <div className="flex flex-row h-1/4">
           <img className="flex items-center justify-center w-20 h-25" src={Sublogo} />
