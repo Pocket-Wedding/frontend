@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import SeudeumePage from "./pages/SeudeumePage";
 import Mainpage from "./pages/Mainpage";
 import Weddinghalls from "./pages/Weddinghalls";
+import InvitationPage from "./pages/InvitationPage";
+
 
 function App() {
   return (
@@ -10,10 +12,10 @@ function App() {
       <div className="flex flex-col items-center">
         <Header />
         <Routes>
-          {/* 나중에 여기에 메인페이지 넣읍시다 */}
           <Route path="/weddinghalls" element={<Weddinghalls />} />
           <Route path="/" element={<Mainpage />} />
           <Route path="/Seudeume" element={<SeudeumePage />} />
+          <Route path="/Invitation" element={<InvitationPage />} />
         </Routes>
       </div>
     </Router>
