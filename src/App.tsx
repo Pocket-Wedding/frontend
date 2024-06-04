@@ -12,8 +12,8 @@ function App() {
       <div className="flex flex-col items-center">
         <Header />
         <Routes>
-          <Route path="/weddinghalls" element={<Weddinghalls />} />
           <Route path="/" element={<Mainpage />} />
+          <Route path="/weddinghalls" element={<Weddinghalls />} />
           <Route path="/Seudeume" element={<SeudeumePage />} />
           <Route path="/Invitation" element={<InvitationPage />} />
           <Route path="/Guide" element={<GuidePage />} />
