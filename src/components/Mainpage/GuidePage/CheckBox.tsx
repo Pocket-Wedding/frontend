@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-function SeudeumePage({
+function CheckBox({
   mainTitle,
   comment,
   image,
+  onClick,
 }: {
   mainTitle: string;
   comment: string;
   image: any;
+  onClick: any;
 }) {
   return (
     <div className="flex justify-center flex-col w-70 h-80">
@@ -18,7 +20,10 @@ function SeudeumePage({
       <p className="flex justify-center mt-2 mb-2 text-black text-xs2 font-light ">{comment}</p>
 
       <div className="flex justify-center my-5 ">
-        <button className="flex justify-center items-center w-29 h-7 mb-20 border border-main-color rounded-md text-xs text-main-color font-normal hover:shadow-md hover:scale-105">
+        <button
+          onClick={onClick}
+          className="flex justify-center items-center w-29 h-7 mb-20 border border-main-color rounded-md text-xs text-main-color font-normal hover:shadow-md hover:scale-105"
+        >
           자세히 보기
         </button>
       </div>
@@ -26,4 +31,4 @@ function SeudeumePage({
   );
 }
 
-export default SeudeumePage;
+export default CheckBox;
