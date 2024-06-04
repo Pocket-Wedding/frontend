@@ -4,7 +4,7 @@ import SeudeumePage from "./pages/SeudeumePage";
 import Mainpage from "./pages/Mainpage";
 import Weddinghalls from "./pages/Weddinghalls";
 import InvitationPage from "./pages/InvitationPage";
-
+import GuidePage from "./pages/MainPage/GuidePage";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Mainpage />} />
           <Route path="/Seudeume" element={<SeudeumePage />} />
           <Route path="/Invitation" element={<InvitationPage />} />
+          <Route path="/Guide" element={<GuidePage />} />
         </Routes>
       </div>
     </Router>
