@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
 import Header from "../components/Mainpage/Header";
 import Navbar from "../components/Mainpage/Navbar";
+import { useNavigate } from "react-router-dom";
 import BottomNavbar from "../components/Mainpage/BottomNavbar";
 import SimpleSlider from "../components/Mainpage/SimpleSlider";
 
@@ -13,6 +15,12 @@ import Subimage from "../assets/Image/Subimage.svg";
 import Sublogo from "../assets/Image/sublogo.svg";
 
 const Mainpage = () => {
+  const navigate = useNavigate();
+
+  const handleGuideClick = () => {
+    navigate("/guide");
+  };
+
   return (
     <div className="relative bg-white  w-140 max-w-[560px] h-full responsive-container">
       <div className="absolute h-1/2 w-full max-w-[560px] justify-center mt-3">
@@ -21,23 +29,23 @@ const Mainpage = () => {
           className="flex flex-row w-full max-w-[560px]  justify-center"
           style={{ marginTop: "30px" }}
         >
-          <button className="mx-3 text-sm">
+          <button className="mx-3 text-sm hover:scale-110">
             <img src={Comintro} />
             <b>기업 소개</b>
           </button>
-          <button className="mx-3 text-sm">
+          <button className="mx-3 text-sm hover:scale-110" onClick={handleGuideClick}>
             <img src={guide} />
             <b>가이드</b>
           </button>
-          <button className="mx-3 text-sm">
+          <button className="mx-3 text-sm hover:scale-110">
             <img src={selfquote} />
             <b>셀프 견적</b>
           </button>
-          <button className="mx-3 text-sm">
+          <button className="mx-3 text-sm hover:scale-110">
             <img src={eventreview} />
             <b>이벤트&리뷰</b>
           </button>
-          <button className="mx-3 text-sm">
+          <button className="mx-3 text-sm hover:scale-110">
             <img src={planner} />
             <b>플래너 상담</b>
           </button>

@@ -17,6 +17,7 @@ export default {
       height: {
         22: "5.5rem",
         130: "32.5rem",
+        320: "80rem",
       },
       colors: {
         "main-color": "#124E77",
@@ -36,6 +37,9 @@ export default {
       },
       borderRadius: {
         30: "1.875rem",
+      },
+      fontSize: {
+        xs2: "0.65rem",
       },
     },
   },
