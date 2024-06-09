@@ -1,5 +1,5 @@
 import CheckBox from "../../components/Mainpage/GuidePage/CheckBox";
-import weddingImg from "../../assets/Image/weddingImg.png";
+import weddingImg from "../../assets/Image/WeddingImg.png";
 import weddingImg2 from "../../assets/Image/weddingImg2.png";
 import weddingImg3 from "../../assets/Image/weddingImg3.png";
 import weddingImg4 from "../../assets/Image/weddingImg4.png";
