@@ -1,6 +1,18 @@
 import BottomNavbar from "../components/Mainpage/BottomNavbar";
+import { useState } from "react";
+import Planner_modal from "./Planner_modal";
 
 const Planner = () => {
+  const [IsModal, setIsModal] = useState(false);
+
+  const ModalOpen = () => {
+    setIsModal(true);
+  };
+
+  const ModalClose = () => {
+    setIsModal(false);
+  };
+
   return (
     <div className="flex flex-col relative bg-white  w-140 max-w-[560px] h-full responsive-container">
       <div className="w-full flex flex-col items-center justify-center my-5 bg-gray-100  p-5 rounded-2xl">
@@ -12,7 +24,10 @@ const Planner = () => {
           상담 소요시간은 약 1시간이 소요됩니다. <br />
           방문상담은 유료(1만원)로 진행되며 오딩과 계약 진행시 면제처리됩니다.
         </p>
-        <button className="flex w-44 h-10 text-lg rounded-md text-sm bg-main-color text-white hover:bg-deep-blue items-center justify-center">
+        <button
+          className="flex w-44 h-10 text-lg rounded-md text-sm bg-main-color text-white hover:bg-deep-blue items-center justify-center"
+          onClick={ModalOpen}
+        >
           스몰 웨딩 상담 신청 바로가기
         </button>
       </div>
@@ -28,11 +43,15 @@ const Planner = () => {
           예약제로 상담을 진행하고 있으며 '노쇼'를 <br />
           방지하기 위해 예약시 1만원의 예약금이 발생하며 상담 이후 환불처리됩니다.
         </p>
-        <button className="flex w-44 h-10 text-lg rounded-md text-sm bg-main-color text-white hover:bg-deep-blue items-center justify-center">
+        <button
+          className="flex w-44 h-10 text-lg rounded-md text-sm bg-main-color text-white hover:bg-deep-blue items-center justify-center"
+          onClick={ModalClose}
+        >
           스드메 상담 신청 바로가기
         </button>
       </div>
       <BottomNavbar />
+      <Planner_modal IsModal={IsModal} />
     </div>
   );
 };
