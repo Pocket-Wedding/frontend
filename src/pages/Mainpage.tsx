@@ -21,6 +21,10 @@ const Mainpage = () => {
     navigate("/guide");
   };
 
+  const handlePlannerClick = () => {
+    navigate("/planner");
+  };
+
   return (
     <div className="relative bg-white  w-140 max-w-[560px] h-full responsive-container">
       <div className="absolute h-1/2 w-full max-w-[560px] justify-center mt-3">
@@ -45,7 +49,7 @@ const Mainpage = () => {
             <img src={eventreview} />
             <b>이벤트&리뷰</b>
           </button>
-          <button className="mx-3 text-sm hover:scale-110">
+          <button className="mx-3 text-sm hover:scale-110" onClick={handlePlannerClick}>
             <img src={planner} />
             <b>플래너 상담</b>
           </button>
