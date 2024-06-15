@@ -4,12 +4,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FaCalendarAlt } from "react-icons/fa";
 import ko from "date-fns/locale/ko";
 import { registerLocale } from "react-datepicker";
+import { setHours, setMinutes, getHours, addHours } from "date-fns";
 
 registerLocale("ko", ko);
 
 const Planner_modal = ({ IsModal, closeModal }) => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(null);
 
   if (IsModal == true) {
     return (
@@ -28,7 +29,7 @@ const Planner_modal = ({ IsModal, closeModal }) => {
               locale="ko"
               className="p-2 border border-gray-300 rounded-md w-full "
               onChange={(date) => setSelectedDate(date)}
-              placeholderText="연도,월,일"
+              placeholderText="날짜를 선택하세요."
               minDate={new Date()} // 오늘 이전의 날짜는 선택할 수 없도록 설정
               dateFormat="yyyy년 MM월 dd일"
               disabledKeyboardNavigation
@@ -44,8 +45,11 @@ const Planner_modal = ({ IsModal, closeModal }) => {
                 showTimeSelect
                 showTimeSelectOnly
                 timeIntervals={30}
+                placeholderText="시간을 선택하세요."
                 timeCaption="Time"
                 dateFormat="h:mm aa"
+                minTime={setHours(setMinutes(new Date(), 30), 9)}
+                maxTime={setHours(setMinutes(new Date(), 0), 19)}
               />
             </div>
           )}
