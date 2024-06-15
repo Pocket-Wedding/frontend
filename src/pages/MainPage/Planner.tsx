@@ -1,4 +1,4 @@
-import BottomNavbar from "../components/Mainpage/BottomNavbar";
+import BottomNavbar from "../../components/Mainpage/BottomNavbar";
 import { useState } from "react";
 import Planner_modal from "./Planner_modal";
 

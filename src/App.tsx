@@ -5,7 +5,7 @@ import Mainpage from "./pages/Mainpage";
 import Weddinghalls from "./pages/Weddinghalls";
 import InvitationPage from "./pages/InvitationPage";
 import GuidePage from "./pages/MainPage/GuidePage";
-import Planner from "./pages/Planner";
+import Planner from "./pages/MainPage/Planner";
 
 function App() {
   return (

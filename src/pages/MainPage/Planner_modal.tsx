@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { FaCalendarAlt } from "react-icons/fa";
-import ko from "date-fns/locale/ko";
+import { ko } from "date-fns/locale/ko";
 import { registerLocale } from "react-datepicker";
-import { setHours, setMinutes, getHours, addHours } from "date-fns";
+import { setHours, setMinutes } from "date-fns";
 
-import V from "../assets/Image/V.svg";
-import { setTime } from "react-datepicker/dist/date_utils";
+import V from "../../assets/Image/V.svg";
+
 registerLocale("ko", ko);
 
 const Planner_modal = ({ IsModal, closeModal }) => {
