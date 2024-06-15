@@ -51,7 +51,7 @@ const Planner = () => {
         </button>
       </div>
       <BottomNavbar />
-      <Planner_modal IsModal={IsModal} />
+      <Planner_modal IsModal={IsModal} closeModal={ModalClose} />
     </div>
   );
 };
