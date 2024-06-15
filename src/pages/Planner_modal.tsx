@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FaCalendarAlt } from "react-icons/fa";
@@ -6,13 +6,37 @@ import ko from "date-fns/locale/ko";
 import { registerLocale } from "react-datepicker";
 import { setHours, setMinutes, getHours, addHours } from "date-fns";
 
+import V from "../assets/Image/V.svg";
+import { setTime } from "react-datepicker/dist/date_utils";
 registerLocale("ko", ko);
 
 const Planner_modal = ({ IsModal, closeModal }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [startDate, setStartDate] = useState(null);
+  const [reserve, setReserve] = useState(false);
 
-  if (IsModal == true) {
+  const Reserve_success = () => {
+    if (selectedDate && startDate) {
+      setReserve(true);
+    } else {
+      // 예약 날짜와 시간을 선택하지 않은 경우 처리 (예: 오류 메시지 등)
+      alert("방문 날짜와 시간을 선택해주세요.");
+    }
+  };
+
+  useEffect(() => {
+    //예약 완료 창 닫기
+    let timer;
+    if (reserve) {
+      timer = setTimeout(() => {
+        setReserve(false);
+        closeModal();
+      }, 3000);
+    }
+    return () => clearTimeout(timer);
+  }, [reserve]);
+
+  if (IsModal == true && reserve == false) {
     return (
       <div className="fixed top-0 h-full w-140 bg-gray-100 bg-opacity-80 flex items-center justify-center">
         {/* 전체 wrapper */}
@@ -54,7 +78,10 @@ const Planner_modal = ({ IsModal, closeModal }) => {
             </div>
           )}
           <div className="w-full flex justify-end p-4">
-            <button className="flex w-14 h-8 text-base rounded-xl text-sm bg-main-color text-white hover:bg-deep-blue items-center justify-center">
+            <button
+              className="flex w-14 h-8 text-base rounded-xl text-sm bg-main-color text-white hover:bg-deep-blue items-center justify-center"
+              onClick={Reserve_success}
+            >
               다음
             </button>
           </div>
@@ -66,6 +93,18 @@ const Planner_modal = ({ IsModal, closeModal }) => {
               닫기
             </button>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (reserve) {
+    return (
+      <div className="fixed top-0 h-full w-140 bg-gray-100 bg-opacity-80 flex items-center justify-center">
+        <div className="flex bg-white w-3/4  rounded-2xl border border-gray-300 items-center justify-center p-3 ">
+          {/* 예약 완료 커스텀 UI 추가 */}
+          <img src={V} />
+          <p className="text-xl p-4 text-gray-600 font-bold">상담 신청이 완료되었습니다!</p>
         </div>
       </div>
     );
