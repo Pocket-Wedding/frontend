@@ -31,7 +31,7 @@ const Planner_modal = ({ IsModal, closeModal }) => {
       timer = setTimeout(() => {
         setReserve(false);
         closeModal();
-      }, 3000);
+      }, 2000);
     }
     return () => clearTimeout(timer);
   }, [reserve]);
@@ -101,7 +101,7 @@ const Planner_modal = ({ IsModal, closeModal }) => {
   if (reserve) {
     return (
       <div className="fixed top-0 h-full w-140 bg-gray-100 bg-opacity-80 flex items-center justify-center">
-        <div className="flex bg-white w-3/4  rounded-2xl border border-gray-300 items-center justify-center p-3 ">
+        <div className="flex bg-white w-3/4  rounded-2xl border border-gray-300 items-center justify-center p-5 ">
           {/* 예약 완료 커스텀 UI 추가 */}
           <img src={V} />
           <p className="text-xl p-4 text-gray-600 font-bold">상담 신청이 완료되었습니다!</p>
