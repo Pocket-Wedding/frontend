@@ -11,12 +11,15 @@ export default {
         29: "7.25rem",
         50: "12.5rem",
         70: "17.5rem",
+        96: "24rem",
+        112: "28rem",
         125: "31.25rem",
         140: "35rem",
       },
       height: {
         22: "5.5rem",
         130: "32.5rem",
+        240: "60rem",
         320: "80rem",
       },
       colors: {
@@ -30,6 +33,7 @@ export default {
         "deep-yellow": "#F9D966",
       },
       borderWidth: {
+        1: "1px",
         3: "3px",
       },
       primary: {
