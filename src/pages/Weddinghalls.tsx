@@ -1,7 +1,24 @@
 import Weddinghallbutton from "../components/Weddinghalls/Weddinghallbutton";
 import BottomNavbar from "../components/Mainpage/BottomNavbar";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Weddinghalls = () => {
+  const [hallData, setHallData] = useState([]);
+
+  const Weddinghall_Show = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/api/v1/halls/show
+  `);
+      setHallData(response.data);
+    } catch (error) {
+      console.error("불러오기 실패", error);
+    }
+  };
+
+  useEffect(() => {
+    Weddinghall_Show();
+  }, []);
   return (
     <div className="w-140 h-full h-screen">
       <div className="bg-white w-full p-10 text-sm text-gray-600">

@@ -14,7 +14,7 @@ const Planner = () => {
   };
 
   return (
-    <div className="flex flex-col relative bg-white  w-140 max-w-[560px] h-full responsive-container">
+    <div className="flex flex-col relative bg-white w-140 max-w-[560px] h-full responsive-container">
       <div className="w-full flex flex-col items-center justify-center my-5 bg-gray-100  p-5 rounded-2xl">
         <h1 className="flex font-bold text-2xl w-full items-center justify-center mb-8">
           스몰웨딩 상담
