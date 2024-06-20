@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { AnalysisProps } from "../../types/Seudeume.ts";
 import AnalysisImg from "../../assets/AnalysisImg.svg";
 import { useState } from "react";

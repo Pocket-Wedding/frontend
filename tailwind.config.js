@@ -12,6 +12,7 @@ export default {
         50: "12.5rem",
         70: "17.5rem",
         96: "24rem",
+        108: "27rem",
         112: "28rem",
         125: "31.25rem",
         140: "35rem",
@@ -21,6 +22,7 @@ export default {
         130: "32.5rem",
         240: "60rem",
         320: "80rem",
+        708: "177rem",
       },
       colors: {
         "main-color": "#124E77",

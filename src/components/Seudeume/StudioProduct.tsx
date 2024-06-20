@@ -1,12 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import Image1 from "../../assets/image33.png";
+import { useNavigate } from "react-router-dom";
 
 function StudioProduct() {
   const [name, setName] = useState<string>("원규 스튜디오");
   const [comment, setComment] = useState<string>("리허설_오전_특가(토탈)");
   const [category, setCategory] = useState<string>("리허설_토탈");
+  const navigate = useNavigate();
 
-  const showInformation = () => {};
+  const showInformation = () => {
+    navigate("/SeudeumeInfo");
+  };
 
   return (
     <div className="w-140 h-full flex items-center justify-center">

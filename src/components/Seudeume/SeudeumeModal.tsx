@@ -1,6 +1,11 @@
 import StudioProduct from "./StudioProduct.tsx";
 
-const Planner_modal = ({ IsModal, closeModal }) => {
+interface PlannerModalProps {
+  IsModal: boolean;
+  closeModal: () => void;
+}
+
+const Planner_modal: React.FC<PlannerModalProps> = ({ IsModal, closeModal }) => {
   if (IsModal) {
     return (
       <div className="fixed inset-0 bg-gray-100 bg-opacity-80 flex items-center justify-center">
