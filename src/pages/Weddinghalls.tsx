@@ -1,9 +1,7 @@
-import Weddinghallbutton from "../components/Weddinghalls/Weddinghallbutton";
-
 import hallimage from "../assets/Image/hallimage.svg";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Weddinghalls = () => {
   const [hallData, setHallData] = useState([]);
@@ -52,20 +50,22 @@ const Weddinghalls = () => {
         </p>
         <div className="w-full my-5">
           {hallData.slice(0, visiblenumber).map((hall) => (
-            <button
-              key={hall.id}
-              className="w-56 mx-2 my-3 shadow-xl rounded-2xl transform transition-transform duration-100 hover:scale-105 "
-            >
-              <img className="rounded-t-2xl" src={hallimage} />
-              <div className="flex flex-col items-center bg-white rounded-b-2xl p-5">
-                <h1 className="font-bold mb-5">{hall.name}</h1>
-                <p>{hall.weddingForm}</p>
-                <p>{hall.price}</p>
-                <p>{hall.hallForm}</p>
-                <p>{hall.address}</p>
-                <p>{hall.phoneNumber}</p>
-              </div>
-            </button>
+            <Link to={`/HallDetail/${hall.id}`}>
+              <button
+                key={hall.id}
+                className="w-56 mx-2 my-3 shadow-xl rounded-2xl transform transition-transform duration-100 hover:scale-105 "
+              >
+                <img className="rounded-t-2xl" src={hallimage} />
+                <div className="flex flex-col items-center bg-white rounded-b-2xl p-5">
+                  <h1 className="font-bold mb-5">{hall.name}</h1>
+                  <p>{hall.weddingForm}</p>
+                  <p>{hall.price}</p>
+                  <p>{hall.hallForm}</p>
+                  <p>{hall.address}</p>
+                  <p>{hall.phoneNumber}</p>
+                </div>
+              </button>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center items-center w-full">
