@@ -6,6 +6,7 @@ import axios from "axios";
 
 const Weddinghalls = () => {
   const [hallData, setHallData] = useState([]);
+  const [visiblenumber, setVisiblenumber] = useState(4);
 
   const Weddinghall_Show = async () => {
     try {
@@ -21,6 +22,10 @@ const Weddinghalls = () => {
   useEffect(() => {
     Weddinghall_Show();
   }, []);
+
+  const Loadmore = () => {
+    setVisiblenumber((prevNumber) => prevNumber + 4);
+  }; //더보기 버튼 추가 렌더링
   return (
     <div className="w-140 h-full h-screen">
       <div className="bg-white w-full p-10 text-sm text-gray-600">
@@ -41,7 +46,7 @@ const Weddinghalls = () => {
           포켓웨딩과 제휴된 웨딩홀로 아름다운 결혼을 상상해보아요!
         </p>
         <div className="w-full my-5">
-          {hallData.map((hall) => (
+          {hallData.slice(0, visiblenumber).map((hall) => (
             <button key={hall.id} className="w-56 mx-2 my-3 shadow-xl rounded-2xl">
               <img className="rounded-t-2xl" src={hallimage} />
               <div className="flex flex-col items-center bg-white rounded-b-2xl p-5">
@@ -56,7 +61,10 @@ const Weddinghalls = () => {
           ))}
         </div>
         <div className="flex justify-center items-center w-full">
-          <button className=" w-1/6 h-9 mb-5 mt-10  rounded-md text-sm bg-main-color text-white hover:bg-deep-blue">
+          <button
+            className=" w-1/6 h-9 mb-5 mt-10  rounded-md text-sm bg-main-color text-white hover:bg-deep-blue"
+            onClick={Loadmore}
+          >
             더보기
           </button>
         </div>
