@@ -1,4 +1,3 @@
-import BottomNavbar from "../../components/Mainpage/BottomNavbar";
 import { useState } from "react";
 import Planner_modal from "./Planner_modal";
 
@@ -50,7 +49,7 @@ const Planner = () => {
           스드메 상담 신청 바로가기
         </button>
       </div>
-      <BottomNavbar />
+
       <Planner_modal IsModal={IsModal} closeModal={ModalClose} />
     </div>
   );

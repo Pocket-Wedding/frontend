@@ -1,8 +1,9 @@
 import Weddinghallbutton from "../components/Weddinghalls/Weddinghallbutton";
-import BottomNavbar from "../components/Mainpage/BottomNavbar";
+
 import hallimage from "../assets/Image/hallimage.svg";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Weddinghalls = () => {
   const [hallData, setHallData] = useState([]);
@@ -142,7 +143,6 @@ const Weddinghalls = () => {
           </div>
         </div>
       </div>
-      <BottomNavbar />
     </div>
   );
 };

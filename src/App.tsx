@@ -6,6 +6,8 @@ import Weddinghalls from "./pages/Weddinghalls";
 import InvitationPage from "./pages/InvitationPage";
 import GuidePage from "./pages/MainPage/GuidePage";
 import Planner from "./pages/MainPage/Planner";
+import HallDetail from "./pages/Weddinghalls/HallDetail";
+import BottomNavbar from "./components/Mainpage/BottomNavbar";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
           <Route path="/Invitation" element={<InvitationPage />} />
           <Route path="/Guide" element={<GuidePage />} />
           <Route path="/Planner" element={<Planner />} />
+          <Route path="/HallDetail/:id" element={<HallDetail />} />
         </Routes>
+        <BottomNavbar />
       </div>
     </Router>
   );
