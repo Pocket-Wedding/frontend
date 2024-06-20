@@ -24,7 +24,11 @@ const Weddinghalls = () => {
   }, []);
 
   const Loadmore = () => {
-    setVisiblenumber((prevNumber) => prevNumber + 4);
+    if (hallData.length > visiblenumber) {
+      setVisiblenumber((prevNumber) => prevNumber + 4);
+    } else {
+      window.alert("더 이상 표시할 웨딩홀이 없습니다.");
+    }
   }; //더보기 버튼 추가 렌더링
   return (
     <div className="w-140 h-full h-screen">
@@ -47,7 +51,10 @@ const Weddinghalls = () => {
         </p>
         <div className="w-full my-5">
           {hallData.slice(0, visiblenumber).map((hall) => (
-            <button key={hall.id} className="w-56 mx-2 my-3 shadow-xl rounded-2xl">
+            <button
+              key={hall.id}
+              className="w-56 mx-2 my-3 shadow-xl rounded-2xl transform transition-transform duration-100 hover:scale-105 "
+            >
               <img className="rounded-t-2xl" src={hallimage} />
               <div className="flex flex-col items-center bg-white rounded-b-2xl p-5">
                 <h1 className="font-bold mb-5">{hall.name}</h1>
