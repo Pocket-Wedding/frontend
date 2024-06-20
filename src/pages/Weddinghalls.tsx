@@ -1,5 +1,6 @@
 import Weddinghallbutton from "../components/Weddinghalls/Weddinghallbutton";
 import BottomNavbar from "../components/Mainpage/BottomNavbar";
+import hallimage from "../assets/Image/hallimage.svg";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -40,11 +41,19 @@ const Weddinghalls = () => {
           포켓웨딩과 제휴된 웨딩홀로 아름다운 결혼을 상상해보아요!
         </p>
         <div className="w-full my-5">
-          <Weddinghallbutton />
-          <Weddinghallbutton />
-
-          <Weddinghallbutton />
-          <Weddinghallbutton />
+          {hallData.map((hall) => (
+            <button key={hall.id} className="w-56 mx-2 my-3 shadow-xl rounded-2xl">
+              <img className="rounded-t-2xl" src={hallimage} />
+              <div className="flex flex-col items-center bg-white rounded-b-2xl p-5">
+                <h1 className="font-bold mb-5">{hall.name}</h1>
+                <p>{hall.weddingForm}</p>
+                <p>{hall.price}</p>
+                <p>{hall.hallForm}</p>
+                <p>{hall.address}</p>
+                <p>{hall.phoneNumber}</p>
+              </div>
+            </button>
+          ))}
         </div>
         <div className="flex justify-center items-center w-full">
           <button className=" w-1/6 h-9 mb-5 mt-10  rounded-md text-sm bg-main-color text-white hover:bg-deep-blue">
