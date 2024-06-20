@@ -11,6 +11,7 @@ const Weddinghalls = () => {
       const response = await axios.get(`http://localhost:8080/api/v1/halls/show
   `);
       setHallData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("불러오기 실패", error);
     }
@@ -38,11 +39,10 @@ const Weddinghalls = () => {
         <p className="my-3 text-gray-600">
           포켓웨딩과 제휴된 웨딩홀로 아름다운 결혼을 상상해보아요!
         </p>
-        <div className="w-full flex my-5">
+        <div className="w-full my-5">
           <Weddinghallbutton />
           <Weddinghallbutton />
-        </div>
-        <div className="w-full flex my-5">
+
           <Weddinghallbutton />
           <Weddinghallbutton />
         </div>
