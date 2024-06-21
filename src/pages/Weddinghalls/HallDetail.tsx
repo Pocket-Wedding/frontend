@@ -15,8 +15,10 @@ const HallDetail = () => {
   };
 
   useEffect(() => {
-    HallDetail_show();
-  }, []);
+    if (id) {
+      HallDetail_show();
+    }
+  }, [id]);
 
   return <></>;
 };

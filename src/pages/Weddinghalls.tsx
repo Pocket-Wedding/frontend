@@ -50,7 +50,7 @@ const Weddinghalls = () => {
         </p>
         <div className="w-full my-5">
           {hallData.slice(0, visiblenumber).map((hall) => (
-            <Link to={`/HallDetail/${hall.id}`}>
+            <Link to={`/HallDetail/${hall.id}`} key={hall.id}>
               <button
                 key={hall.id}
                 className="w-56 mx-2 my-3 shadow-xl rounded-2xl transform transition-transform duration-100 hover:scale-105 "
