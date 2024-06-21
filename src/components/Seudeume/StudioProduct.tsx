@@ -2,6 +2,13 @@
 import { useState } from "react";
 import Image1 from "../../assets/image33.png";
 import { useNavigate } from "react-router-dom";
+import useCheckStore from "../../stores/CheckStore.ts";
+import Swal from "sweetalert2";
+
+interface CheckStoreState {
+  companyName: string;
+  companyComment: string;
+}
 
 function StudioProduct() {
   const [name, setName] = useState<string>("원규 스튜디오");
@@ -11,6 +18,15 @@ function StudioProduct() {
 
   const showInformation = () => {
     navigate("/SeudeumeInfo");
+  };
+
+  const setCompanyName = useCheckStore((state) => state.setCompanyName);
+  const setCompanyComment = useCheckStore((state) => state.setCompanyComment);
+
+  const addEstimate = () => {
+    setCompanyName(name);
+    setCompanyComment(comment);
+    Swal.fire("견적이 추가 되었습니다");
   };
 
   return (
@@ -35,7 +51,10 @@ function StudioProduct() {
               >
                 상품정보
               </button>
-              <button className="px-4 w-22 h-6 text-white text-xs bg-light-blue font-light rounded-md hover:bg-deep-blue">
+              <button
+                onClick={addEstimate}
+                className="px-4 w-22 h-6 text-white text-xs bg-light-blue font-light rounded-md hover:bg-deep-blue"
+              >
                 견적 추가
               </button>
             </div>

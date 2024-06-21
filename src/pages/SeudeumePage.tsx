@@ -3,8 +3,55 @@ import Image1 from "../assets/Image1.png";
 import StarterPack from "../components/Seudeume/StarterPack";
 import Analysis from "../components/Seudeume/Analysis";
 import BottomNavbar from "../components/Mainpage/BottomNavbar";
+import CheckEstimate from "../components/Seudeume/CheckEstimate";
+import useCheckStore from "../stores/CheckStore.ts";
+import { useState } from "react";
+import Swal from "sweetalert2";
+
+export interface CheckStoreState {
+  companyName: string;
+  companyComment: string;
+  // deleteCompany: () => void;
+}
 
 function SeudeumePage() {
+  const [estimateModal, setEstimateModal] = useState(false);
+
+  const ModalOpen = () => {
+    setEstimateModal(true);
+  };
+
+  const ModalClose = () => {
+    setEstimateModal(false);
+  };
+
+  const { companyName, companyComment } = useCheckStore((state: CheckStoreState) => ({
+    companyName: state.companyName,
+    companyComment: state.companyComment,
+  }));
+
+  const deleteCompany = useCheckStore((state) => state.deleteCompany);
+
+  const alert = () => {
+    Swal.fire({
+      title: "초기화 하시겠습니까?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "초기화",
+      cancelButtonText: "취소",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteCompany();
+        Swal.fire({
+          title: "초기화 되었습니다.",
+          icon: "success",
+        });
+      }
+    });
+  };
+
   return (
     <div className="w-140 h-full ">
       <div className="p-14 ">
@@ -114,7 +161,23 @@ function SeudeumePage() {
         </Link>
 
         <div className="flex justify-center mt-20 ">
-          <Analysis mainTitle="스튜디오" type="STUDIO" comment="왼쪽 '선택' 버튼을 클릭하세요." />
+          <Analysis
+            mainTitle="스튜디오"
+            type="STUDIO"
+            comment={
+              companyName ? (
+                <div className="p-3 ml-8">
+                  <p className="flex items-center justify-center text-lg font-bold">
+                    {companyName}
+                    <br />
+                  </p>
+                  <p className="flex items-center justify-center mt-3">{companyComment}</p>
+                </div>
+              ) : (
+                "왼쪽 '선택' 버튼을 클릭하세요."
+              )
+            }
+          />
         </div>
         <div className="flex justify-center mt-5 ">
           <Analysis mainTitle="드레스" type="DRESS" comment="왼쪽 '선택' 버튼을 클릭하세요." />
@@ -124,13 +187,20 @@ function SeudeumePage() {
         </div>
 
         <div className="flex justify-center ">
-          <button className="flex justify-center items-center w-16 h-7 mb-20 rounded-md text-sm text-main-color bg-light-yellow hover:bg-deep-yellow">
+          <button
+            onClick={alert}
+            className="flex justify-center items-center w-16 h-7 mb-20 rounded-md text-sm text-main-color bg-light-yellow hover:bg-deep-yellow"
+          >
             {"초기화"}
           </button>
-          <button className="flex justify-center items-center w-20 h-7 mb-20 ml-5 rounded-md text-sm bg-main-color text-white hover:bg-deep-blue">
+          <button
+            onClick={ModalOpen}
+            className="flex justify-center items-center w-20 h-7 mb-20 ml-5 rounded-md text-sm bg-main-color text-white hover:bg-deep-blue"
+          >
             {"견적확인"}
           </button>
         </div>
+        <CheckEstimate IsModal={estimateModal} closeModal={ModalClose} />
       </div>
       <BottomNavbar />
     </div>
