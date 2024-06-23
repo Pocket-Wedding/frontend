@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Image1 from "../assets/Image1.png";
 import StarterPack from "../components/Seudeume/StarterPack";
 import Analysis from "../components/Seudeume/Analysis";
-import BottomNavbar from "../components/Mainpage/BottomNavbar";
 import CheckEstimate from "../components/Seudeume/CheckEstimate";
 import useCheckStore from "../stores/CheckStore.ts";
 import { useState } from "react";
@@ -202,7 +201,6 @@ function SeudeumePage() {
         </div>
         <CheckEstimate IsModal={estimateModal} closeModal={ModalClose} />
       </div>
-      <BottomNavbar />
     </div>
   );
 }

@@ -1,7 +1,34 @@
-import Weddinghallbutton from "../components/Weddinghalls/Weddinghallbutton";
-import BottomNavbar from "../components/Mainpage/BottomNavbar";
+import hallimage from "../assets/Image/hallimage.svg";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Weddinghalls = () => {
+  const [hallData, setHallData] = useState([]);
+  const [visiblenumber, setVisiblenumber] = useState(4);
+
+  const Weddinghall_Show = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/api/v1/halls/show
+  `);
+      setHallData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("불러오기 실패", error);
+    }
+  };
+
+  useEffect(() => {
+    Weddinghall_Show();
+  }, []);
+
+  const Loadmore = () => {
+    if (hallData.length > visiblenumber) {
+      setVisiblenumber((prevNumber) => prevNumber + 4);
+    } else {
+      window.alert("더 이상 표시할 웨딩홀이 없습니다.");
+    }
+  }; //더보기 버튼 추가 렌더링
   return (
     <div className="w-140 h-full h-screen">
       <div className="bg-white w-full p-10 text-sm text-gray-600">
@@ -21,16 +48,31 @@ const Weddinghalls = () => {
         <p className="my-3 text-gray-600">
           포켓웨딩과 제휴된 웨딩홀로 아름다운 결혼을 상상해보아요!
         </p>
-        <div className="w-full flex my-5">
-          <Weddinghallbutton />
-          <Weddinghallbutton />
-        </div>
-        <div className="w-full flex my-5">
-          <Weddinghallbutton />
-          <Weddinghallbutton />
+        <div className="w-full my-5">
+          {hallData.slice(0, visiblenumber).map((hall) => (
+            <Link to={`/HallDetail/${hall.id}`} key={hall.id}>
+              <button
+                key={hall.id}
+                className="w-56 mx-2 my-3 shadow-xl rounded-2xl transform transition-transform duration-100 hover:scale-105 "
+              >
+                <img className="rounded-t-2xl" src={hallimage} />
+                <div className="flex flex-col items-center bg-white rounded-b-2xl p-5">
+                  <h1 className="font-bold mb-5">{hall.name}</h1>
+                  <p>{hall.weddingForm}</p>
+                  <p>{hall.price}</p>
+                  <p>{hall.hallForm}</p>
+                  <p>{hall.address}</p>
+                  <p>{hall.phoneNumber}</p>
+                </div>
+              </button>
+            </Link>
+          ))}
         </div>
         <div className="flex justify-center items-center w-full">
-          <button className=" w-1/6 h-9 mb-5 mt-10  rounded-md text-sm bg-main-color text-white hover:bg-deep-blue">
+          <button
+            className=" w-1/6 h-9 mb-5 mt-10  rounded-md text-sm bg-main-color text-white hover:bg-deep-blue"
+            onClick={Loadmore}
+          >
             더보기
           </button>
         </div>
@@ -101,7 +143,6 @@ const Weddinghalls = () => {
           </div>
         </div>
       </div>
-      <BottomNavbar />
     </div>
   );
 };

@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
-import Header from "../components/Mainpage/Header";
-import Navbar from "../components/Mainpage/Navbar";
+
 import { useNavigate } from "react-router-dom";
-import BottomNavbar from "../components/Mainpage/BottomNavbar";
+
 import SimpleSlider from "../components/Mainpage/SimpleSlider";
 
 import Comintro from "../assets/Image/Comintro.svg";
@@ -123,7 +121,6 @@ const Mainpage = () => {
           <p>서비스이용약관 / 개인정보처리방침</p>
         </div>
       </div>
-      <BottomNavbar />
     </div>
   );
 };

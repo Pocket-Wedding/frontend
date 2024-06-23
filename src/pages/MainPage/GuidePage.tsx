@@ -5,7 +5,7 @@ import weddingImg3 from "../../assets/Image/weddingImg3.png";
 import weddingImg4 from "../../assets/Image/weddingImg4.png";
 import guideGrape from "../../assets/Image/guideGrape.png";
 import { useRef } from "react";
-import BottomNavbar from "../../components/Mainpage/BottomNavbar";
+
 function SeudeumePage() {
   const guideRef = useRef(null);
   const hallRef = useRef(null);
@@ -291,7 +291,6 @@ function SeudeumePage() {
           </SubTitle>
         </div>
       </div>
-      <BottomNavbar />
     </div>
   );
 }

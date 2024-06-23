@@ -9,3 +9,9 @@ services:
       - "3000:3000"
     command: yarn dev
     restart: always
+    networks:
+      - "pocket"
+
+networks:
+  pocket:
+    driver: bridge

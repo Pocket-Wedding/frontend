@@ -1,7 +1,6 @@
 import Image2 from "../assets/Image2.png";
 import link from "../assets/link.svg";
 import magicStick from "../assets/magicStick.svg";
-import BottomNavbar from "../components/Mainpage/BottomNavbar";
 
 function SeudeumePage() {
   return (
@@ -73,7 +72,6 @@ function SeudeumePage() {
           </div>
         </div>
       </div>
-      <BottomNavbar />
     </div>
   );
 }
