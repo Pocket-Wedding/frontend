@@ -8,6 +8,8 @@ import GuidePage from "./pages/MainPage/GuidePage";
 import Planner from "./pages/MainPage/Planner";
 import HallDetail from "./pages/Weddinghalls/HallDetail";
 import BottomNavbar from "./components/Mainpage/BottomNavbar";
+import SeudeumeInfo from "./components/Seudeume/SeudeumeInfo";
+
 
 function App() {
   return (
@@ -21,7 +23,10 @@ function App() {
           <Route path="/Invitation" element={<InvitationPage />} />
           <Route path="/Guide" element={<GuidePage />} />
           <Route path="/Planner" element={<Planner />} />
+
           <Route path="/HallDetail/:id" element={<HallDetail />} />
+
+          <Route path="/SeudeumeInfo" element={<SeudeumeInfo />} />
         </Routes>
         <BottomNavbar />
       </div>
